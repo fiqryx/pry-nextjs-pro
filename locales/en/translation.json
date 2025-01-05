@@ -1,0 +1,5 @@
+{
+  "welcome": "Welcome {{name}}",
+  "languageChanged": "Language changed",
+  "translationExample": "This message is rendered by a React Client Component, showcasing interactive elements and dynamic updates without full page reloads."
+}

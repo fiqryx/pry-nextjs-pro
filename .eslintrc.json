@@ -1,0 +1,12 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "react/display-name": "off",
+    "react/no-unescaped-entities": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "@next/next/no-html-link-for-pages": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@next/next/no-img-element": "off"
+  }
+}
