@@ -158,7 +158,7 @@ export const navigation: Navigation = {
         {
             title: "Documentation",
             url: process.env.NEXT_PUBLIC_SITE_DOCS_URL ?? '#',
-            target: "_blank",
+            target: process.env.NEXT_PUBLIC_SITE_DOCS_URL ? "_blank" : undefined,
             icon: Lucide.BookOpen,
         },
     ]
