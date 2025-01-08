@@ -76,16 +76,16 @@ export const customerColumns: ColumnDef<Customer>[] = [
             const { name, image, email } = row.original
 
             return (
-                <div className="flex items-center px-1 py-1.5 gap-2">
-                    <Avatar className="size-10 text-sm">
+                <div className="flex items-center gap-2 px-1 py-1.5">
+                    <Avatar className="h-10 w-10 text-sm">
                         <AvatarImage src={image} alt={name} />
                         <AvatarFallback>
                             {name.slice(0, 2)}
                         </AvatarFallback>
                     </Avatar>
-                    <div className="flex flex-col text-sm leading-tight max-w-xs">
+                    <div className="flex flex-col leading-tight max-w-32 lg:max-w-xs">
                         <span className="text-sm">{name}</span>
-                        <span className="text-xs text-muted-foreground">{email}</span>
+                        <span className="text-xs text-muted-foreground truncate">{email}</span>
                     </div>
                 </div>
             )
@@ -95,8 +95,8 @@ export const customerColumns: ColumnDef<Customer>[] = [
         accessorKey: 'credit',
         header: ({ column }) => <DataTableColumnHeader column={column} title="Credit" />,
         cell: ({ row }) => (
-            <div className="flex flex-col px-4 gap-1">
-                <div className="text-muted-foreground text-end">{row.getValue('credit')}%</div>
+            <div className="flex flex-col px-4 gap-1 items-end">
+                <div className="text-muted-foreground">{row.getValue('credit')}%</div>
                 <Progress value={row.getValue('credit')} className="h-1 min-w-24" />
             </div>
         )

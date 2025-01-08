@@ -69,7 +69,7 @@ const stepItemVariants = cva(
             },
             size: {
                 sm: 'after:-bottom-8 lg:after:-bottom-10 after:left-3 lg:after:left-4',
-                default: 'after:-bottom-10 lg:after:-bottom-11 after:left-4 lg:after:left-5',
+                default: 'after:-bottom-10 lg:after:-bottom-11 after:left-[15px] lg:after:left-5',
                 lg: 'after:-bottom-11 lg:after:-bottom-14 after:left-5 lg:after:left-6',
             }
         },

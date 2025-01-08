@@ -19,7 +19,7 @@ export function CompanyMembers({
     return (
         <div {...props} className={cn('grid sm:grid-cols-2 gap-4', className)}>
             {members.map((member, idx) => (
-                <div key={idx} className="grid rounded-xl border p-6 gap-4">
+                <div key={idx} className="grid rounded-xl border p-4 lg:p-6 gap-4">
                     <AvatarWithContent src={member.photo}>
                         <div className="flex flex-col gap-1.5">
                             <h3 className="text-sm">{member.name}</h3>

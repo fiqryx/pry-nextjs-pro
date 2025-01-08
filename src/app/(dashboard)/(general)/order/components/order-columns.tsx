@@ -97,8 +97,8 @@ export const orderColumns: ColumnDef<Order>[] = [
                             {String(createdAt.getDate()).padStart(2, "0")}
                         </span>
                     </Badge>
-                    <div className="flex flex-col text-sm leading-tight max-w-xs">
-                        <span>{orderNo}</span>
+                    <div className="flex flex-col text-sm leading-tight min-w-24">
+                        <span className="text-sm">{orderNo}</span>
                         <span className="text-xs text-muted-foreground lowercase">
                             {`${products.length} Products • $${total}`}
                         </span>
@@ -128,11 +128,11 @@ export const orderColumns: ColumnDef<Order>[] = [
                             <ImageIcon className="text-muted-foreground" />
                         </AvatarFallback>
                     </Avatar>
-                    <div className="flex flex-col text-sm max-w-xs">
+                    <div className="flex flex-col text-sm max-w-32 lg:max-w-xs">
                         <span className="text-sm">
                             {name}
                         </span>
-                        <span className="text-xs text-muted-foreground">
+                        <span className="text-xs text-muted-foreground truncate">
                             {email}
                         </span>
                     </div>

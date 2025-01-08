@@ -59,7 +59,7 @@ export function AppProvider({ children }: React.PropsWithChildren) {
         <>
             {children}
             {!appStore.loading && (
-                <SettingSheet className="fixed z-10 hidden lg:flex bottom-8 right-10 animate-spin animate-duration-[5000ms]" />
+                <SettingSheet className="fixed z-10 flex bottom-5 right-5 lg:bottom-8 lg:right-10 animate-spin animate-duration-[5000ms]" />
             )}
         </>
     )

@@ -42,7 +42,7 @@ export function JobsCompany({
                 (page.pageIndex + 1) * page.pageSize
             ).map((item, idx) => (
                 <Card key={idx}>
-                    <CardContent className="grid p-4 gap-4">
+                    <CardContent className="grid p-2 lg:p-4 gap-4">
                         <div className="flex gap-2 px-1 py-1.5">
                             <Avatar className="text-sm border size-16 ">
                                 <AvatarImage src={item.logo} alt={item.name} />
