@@ -51,7 +51,7 @@ export function SettingSheet({
             <SheetTrigger asChild>
                 <Button
                     size="icon"
-                    className={cn("size-10 rounded-full", className)}
+                    className={cn("size-8 lg:size-10 rounded-full", className)}
                     {...props}
                 >
                     <SettingsIcon />

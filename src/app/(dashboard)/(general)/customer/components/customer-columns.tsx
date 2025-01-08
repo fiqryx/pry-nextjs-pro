@@ -76,14 +76,14 @@ export const customerColumns: ColumnDef<Customer>[] = [
             const { name, image, email } = row.original
 
             return (
-                <div className="inline-flex items-center px-1 py-1.5 gap-2">
+                <div className="flex items-center px-1 py-1.5 gap-2">
                     <Avatar className="size-10 text-sm">
                         <AvatarImage src={image} alt={name} />
                         <AvatarFallback>
                             {name.slice(0, 2)}
                         </AvatarFallback>
                     </Avatar>
-                    <div className="flex flex-col text-sm leading-tight">
+                    <div className="flex flex-col text-sm leading-tight max-w-xs">
                         <span className="text-sm">{name}</span>
                         <span className="text-xs text-muted-foreground">{email}</span>
                     </div>

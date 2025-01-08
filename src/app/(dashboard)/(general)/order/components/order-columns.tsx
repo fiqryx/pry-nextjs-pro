@@ -98,8 +98,8 @@ export const orderColumns: ColumnDef<Order>[] = [
                         </span>
                     </Badge>
                     <div className="flex flex-col text-sm leading-tight max-w-xs">
-                        <span className="truncate">{orderNo}</span>
-                        <span className="truncate text-xs text-muted-foreground lowercase">
+                        <span>{orderNo}</span>
+                        <span className="text-xs text-muted-foreground lowercase">
                             {`${products.length} Products • $${total}`}
                         </span>
                     </div>
