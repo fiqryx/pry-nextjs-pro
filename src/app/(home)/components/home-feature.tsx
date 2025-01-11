@@ -63,7 +63,7 @@ export function HomeFeature({
                 heading="Flexibility that cover your needs."
                 description="Well documented, separated in packages."
             >
-                <div className="mt-8 flex flex-col gap-4">
+                <div className="my-8 flex flex-col gap-4">
                     <Link
                         href={process.env.NEXT_PUBLIC_SITE_DOCS_URL ?? '#'}
                         className="rounded-xl bg-gradient-to-br from-transparent via-primary p-px shadow-lg shadow-primary/20"
