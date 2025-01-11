@@ -2,23 +2,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-
 import { CodeBlock } from "@/components/ui/code-block";
-import { buttonVariants } from "@/components/ui/button";
 
 import QualityImage from '@/../public/thumbnail/order-table-light.png';
 import ThemeFeature from '@/../public/thumbnail/theme-feature.svg';
 
 import {
     LucideIcon,
-    SearchIcon,
     CodeXmlIcon,
     PaletteIcon,
     TimerIcon,
     CpuIcon,
-    LayoutIcon,
-    LibraryIcon,
-    BookIcon,
     BookOpenIcon,
 } from "lucide-react";
 
