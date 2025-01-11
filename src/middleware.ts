@@ -8,7 +8,6 @@ export const config = {
     matcher: '/((?!api|static|.*\\..*|_next).*)'
 }
 
-// can you fix this for support next-auth url on /auth/*
 const publicRoutes = [
     '/',
     '/sign-in',
@@ -21,11 +20,6 @@ export async function middleware(req: NextRequest) {
 
     const { pathname } = req.nextUrl
     const isAuthRoute = pathname.startsWith('/api/auth')
-
-    // remove this if already index page
-    if (req.nextUrl.pathname === '/' && !token) {
-        return NextResponse.redirect(new URL('/sign-in', req.url))
-    }
 
     // redirect to /sign-n if not authenticated
     if (!isAuthRoute && !publicRoutes.includes(req.nextUrl.pathname) && !token) {

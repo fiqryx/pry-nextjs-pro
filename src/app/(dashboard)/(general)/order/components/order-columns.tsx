@@ -121,7 +121,7 @@ export const orderColumns: ColumnDef<Order>[] = [
             const { name, email, image } = row.original.customer
 
             return (
-                <div className="flex items-center gap-2 px-1 py-1.5">
+                <div className="flex items-center gap-2 px-1 py-1.5 w-fit">
                     <Avatar className="size-10 text-sm rounded-full">
                         <AvatarImage src={image} alt={name} />
                         <AvatarFallback className="rounded-full">

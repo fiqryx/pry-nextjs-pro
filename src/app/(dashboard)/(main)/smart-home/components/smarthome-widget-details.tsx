@@ -5,6 +5,7 @@ import { useRooms } from "../use-rooms"
 import { cn, toDecimal } from "@/lib/utils"
 import { useWidgets } from "../use-widgets"
 
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ReactSortable } from "react-sortablejs"
 
@@ -26,7 +27,6 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 
 
 type SmartHomeTemperatureProps = Pick<
@@ -90,6 +90,7 @@ export function SmartHomeWidgetDetails({
             delay={2}
             animation={200}
             delayOnTouchOnly
+            handle=".drag-handle"
             list={widgetDetails}
             setList={setWidgetDetails}
             className={cn('grid gap-5', className)}
@@ -98,7 +99,7 @@ export function SmartHomeWidgetDetails({
                 <Card key={item.id}>
                     <CardHeader className="flex flex-row flex-wrap justify-between items-center p-4 gap-4">
                         <div className="inline-flex justify-center items-center gap-2">
-                            <GripVertical className="size-4 hover:cursor-move" />
+                            <GripVertical className="size-4 hover:cursor-grab drag-handle" />
                             <Badge variant="primary" className="rounded-full p-2">
                                 <item.icon className="size-5" />
                             </Badge>
