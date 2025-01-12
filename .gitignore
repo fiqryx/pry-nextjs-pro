@@ -40,5 +40,7 @@ next-env.d.ts
 
 # misc
 *.lockb
+*thumbnail.png
+!thumbnail.png
 src/components/examples/*
 src/config/navigation-pending.ts

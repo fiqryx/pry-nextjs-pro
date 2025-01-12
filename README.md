@@ -1,53 +1,19 @@
-## [Prykit Pro](https://prykit-nextjs.vercel.app/)
+## [Pry](https://pry-nextjs-pro.vercel.app/)
 
-[![Prykit Pro](./public/thumbnail.png)](https://prykit-nextjs.vercel.app/)
+Pry is a complete, scalable, and customizable solution for building a SaaS application built to get you started on the right foot.
 
-## Pages
-
-- [Dashboard](https://prykit-nextjs.vercel.app)
-- [Customers](https://prykit-nextjs.vercel.app/dashboard/customers)
-- [Integrations](https://prykit-nextjs.vercel.app/dashboard/integrations)
-- [Settings](https://prykit-nextjs.vercel.app/dashboard/settings)
-- [Account](https://prykit-nextjs.vercel.app/dashboard/account)
-- [Sign In](https://prykit-nextjs.vercel.app/sign-in)
-- [Sign Up](https://prykit-nextjs.vercel.app/sign-up)
-
-## Quick start
-
-- Clone the repo: `git clone https://github.com/fiqryx/prykit-nextjs.git`
-- Make sure your Node.js and npm versions are up to date
-- Install dependencies: `bun install`
-- Start the server: `bun run dev`
-- Open browser: `http://localhost:3001`
-
-## File Structure
-
-Within the download you'll find the following directories and files:
-
-```
-...
-├── public
-└── src
-	├── assets
-	├── components
-	├── config
-	├── hooks
-	├── lib
-	├── types
-	├── stores
-	└── app
-		├── favicon.ico
-		├── layout.tsx
-		├── not-found.tsx
-		├── (app)
-		└── (auth)
-```
-
-## Reporting Issues:
-
-- [Github Issues Page](https://github.com/fiqryx/prykit-nextjs/issues)
+This Next.js version uses the new App Router introduced with Next.js 15, which is built on top of the new React Server Components.
 
 
-## License
+[![Pry](./thumbnail.png)](https://pry-nextjs-pro.vercel.app/)
 
-- Licensed under [MIT](https://github.com/fiqryx/prykit-nextjs/blob/main/LICENSE)
+### [Documentation](https://pry-docs.vercel.app/)
+
+### Reporting Issues:
+
+- [Github Issues Page](https://github.com/fiqryx/prykit-nextjs-pro/issues)
+
+
+### License
+
+- Licensed under [MIT](https://github.com/fiqryx/prykit-nextjs-pro/blob/main/LICENSE)

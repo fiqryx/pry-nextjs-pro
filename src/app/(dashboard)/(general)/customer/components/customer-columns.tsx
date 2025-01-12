@@ -76,7 +76,7 @@ export const customerColumns: ColumnDef<Customer>[] = [
             const { name, image, email } = row.original
 
             return (
-                <div className="flex items-center gap-2 px-1 py-1.5">
+                <div className="flex items-center gap-2 px-1 py-1.5 w-fit">
                     <Avatar className="h-10 w-10 text-sm">
                         <AvatarImage src={image} alt={name} />
                         <AvatarFallback>

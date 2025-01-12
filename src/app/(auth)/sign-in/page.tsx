@@ -18,9 +18,7 @@ export default function Page() {
             <div className="flex flex-col gap-4 p-6 md:p-10">
                 <div className="flex justify-center gap-2 md:justify-start">
                     <Link href="/" className="flex items-center gap-2 font-medium">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
-                            <Icons.logo className="size-4" />
-                        </div>
+                        <Icons.logo className="size-6 bg-foreground text-background p-1 rounded-sm" />
                         {site.name}
                     </Link>
                 </div>
@@ -45,7 +43,18 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <div className="hidden lg:flex flex-1 bg-muted justify-center items-center p-4">
+            <div className="relative hidden lg:flex flex-1 justify-center items-center p-4">
+                <div
+                    className="absolute inset-0 z-[-1]"
+                    style={{
+                        backgroundImage: [
+                            'radial-gradient(ellipse at top, transparent 60%, hsla(250,90%,90%,0.2))',
+                            'linear-gradient(to bottom, hsl(var(--background)) 40%, transparent)',
+                            'repeating-linear-gradient(to right, hsl(var(--primary)/.1),hsl(var(--primary)/.1) 1px,transparent 1px,transparent 50px)',
+                            'repeating-linear-gradient(to bottom, hsl(var(--primary)/.1),hsl(var(--primary)/.1) 1px,transparent 1px,transparent 50px)',
+                        ].join(', '),
+                    }}
+                />
                 <div className="relative w-[500px] h-[600px]">
                     <Image fill alt="cover" src="/assets/cover-02.jpg" className="object-cover rounded-xl animate-fade delay-100 scale-x-[-1]" />
                     <div className="absolute -top-5 -right-10 animate-fade-down delay-500">
