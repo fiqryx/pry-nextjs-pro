@@ -1,19 +1,22 @@
 ## [Pry](https://pry-nextjs-pro.vercel.app/)
 
-Pry is a complete, scalable, and customizable solution for building a SaaS application built to get you started on the right foot.
+A modern and customizable UI kit designed to streamline the development of scalable SaaS applications. It provides all the essential tools and components to help you launch projects efficiently and professionally.
 
-This Next.js version uses the new App Router introduced with Next.js 15, which is built on top of the new React Server Components.
+This version is built with Next.js 15, leveraging the new App Router and React Server Components for improved performance, scalability, and seamless routing.
 
 
 [![Pry](./thumbnail.png)](https://pry-nextjs-pro.vercel.app/)
 
-### [Documentation](https://pry-docs.vercel.app/)
 
-### Reporting Issues:
+## Documentation
 
-- [Github Issues Page](https://github.com/fiqryx/prykit-nextjs-pro/issues)
+- [Documentation site](https://pry-docs.vercel.app/) to view the documentation.
+
+## Reporting Issues:
+
+- [Github issues page](https://github.com/fiqryx/prykit-nextjs-pro/issues).
 
 
-### License
+## License
 
-- Licensed under [MIT](https://github.com/fiqryx/prykit-nextjs-pro/blob/main/LICENSE)
+- Licensed under [MIT](https://github.com/fiqryx/prykit-nextjs-pro/blob/main/LICENSE).
