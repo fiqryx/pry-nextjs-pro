@@ -151,7 +151,7 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps<any, any>>(
             <div
                 ref={ref}
                 {...props}
-                className={cn('w-full', className)}
+                className={cn('w-full max-w-sm sm:max-w-full', className)}
             >
                 <DataTableContext.Provider value={{ table }}>
                     <div className={cn(
@@ -159,9 +159,9 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps<any, any>>(
                         className?.split(' ').filter((v) => v.startsWith('rounded-')).join(' ')
                     )}>
                         {(filter || columnControl) && (
-                            <div className={'flex items-center border-b p-2'}>
+                            <div className={'flex border-b p-2 gap-2'}>
                                 {filter && (
-                                    <div className="flex items-center space-x-2">
+                                    <div className="flex items-center flex-wrap gap-2">
                                         {filter?.map((item, idx) => (
                                             <DataTableFilter
                                                 key={idx}
@@ -373,7 +373,7 @@ const DataTableColumnHeader = React.forwardRef<HTMLDivElement, DataTableColumnHe
                 ref={ref}
                 {...props}
                 className={cn(
-                    "flex items-center space-x-2",
+                    "flex items-center gap-2",
                     className
                 )}
             >
@@ -436,7 +436,7 @@ const DataTablePagination = React.forwardRef<HTMLDivElement, DataTablePagination
             <div
                 ref={ref}
                 {...props}
-                className={cn('flex items-center justify-between p-2', className)}
+                className={cn('flex items-center justify-between flex-wrap p-2 gap-2', className)}
             >
                 <div className="flex-1 text-sm text-muted-foreground">
                     {`${table.getFilteredSelectedRowModel().rows.length} of ${table.getFilteredRowModel().rows.length} row(s) selected`}

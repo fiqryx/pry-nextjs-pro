@@ -2,6 +2,7 @@
 
 import React from "react"
 import { cn } from "@/lib/utils"
+import { getNotifications } from "@/lib/fakers/notification-faker"
 
 import { ScrollArea } from "./ui/scroll-area"
 import { Button } from "@/components/ui/button"
@@ -25,7 +26,6 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "./ui/dropdown-menu"
-import { getNotifications } from "@/lib/fakers/notification-faker"
 
 
 export function ToggleNotification({
@@ -68,9 +68,9 @@ export function ToggleNotification({
                     {notification.sort((a, b) => b.date.getTime() - a.date.getTime()).map((item, index) => (
                         <DropdownMenuItem key={index} className="p-0 font-normal">
                             <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                                <Avatar className="h-10 w-10 rounded-lg">
+                                <Avatar className="size-10">
                                     <AvatarImage src={item.avatar} alt={item.name} />
-                                    <AvatarFallback className="rounded-lg">{item.name.slice(0, 2)}</AvatarFallback>
+                                    <AvatarFallback>{item.name.slice(0, 2)}</AvatarFallback>
                                 </Avatar>
                                 <div className="grid flex-1 text-left text-sm leading-tight">
                                     <span className="truncate font-semibold">{item.message}</span>

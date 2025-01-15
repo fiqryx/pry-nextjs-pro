@@ -7,7 +7,7 @@ export const navigation: Navigation = {
         {
             name: site.name,
             logo: Lucide.Pyramid,
-            plan: "Enterprise",
+            plan: "Pro",
         },
         {
             name: "Acme Corp.",
@@ -17,7 +17,7 @@ export const navigation: Navigation = {
         {
             name: "Acme Inc",
             logo: Lucide.GalleryVerticalEnd,
-            plan: "Startup",
+            plan: "Enterprise",
         },
     ],
     main: [
