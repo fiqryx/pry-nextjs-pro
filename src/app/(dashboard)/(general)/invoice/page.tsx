@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 
 import { Plus } from "lucide-react"
 import { Dashboard } from "@/components/app-dashboard"
@@ -13,10 +12,7 @@ import { InvoiceView } from "./components/invoice-view";
 import { InvoiceFilter } from "./components/invoice-filter";
 import { InvoiceTable } from "./components/invoice-table";
 
-export const metadata: Metadata = {
-    title: "Invoices | " + site.name,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'Invoices' })
 
 export default function Page() {
     const data = getInvoices()

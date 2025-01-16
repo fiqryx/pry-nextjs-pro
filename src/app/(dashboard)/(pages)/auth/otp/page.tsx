@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 
 import { Separator } from "@/components/ui/separator";
 import { BlockPreview } from "@/components/ui/block";
@@ -8,11 +7,7 @@ import { OtpFormSimple } from "./components/otp-form-simple";
 import { OtpFormGroup } from "./components/otp-form-group";
 import { OtpFormPattern } from "./components/otp-form-pattern";
 
-
-export const metadata: Metadata = {
-    title: "One-time password | " + site.name,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'One-time password' })
 
 export default async function Page() {
     return (

@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 import { getVehicles } from "@/lib/fakers/vehicle-faker";
 
 
@@ -13,10 +12,7 @@ import { LogisticVehicleCondition } from "./components/logistic-vehicle-conditio
 import { LogisticVehicleRoute } from "./components/logistic-vehicle-route";
 import { LogisticHydrator } from "./components/logistic-hydrator";
 
-export const metadata: Metadata = {
-    title: "Logistics | " + site.name,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'Logistics' })
 
 export default function Page() {
     const data = getVehicles(4)

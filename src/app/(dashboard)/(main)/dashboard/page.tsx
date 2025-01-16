@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 
 import { Dashboard } from "@/components/app-dashboard"
 import { DashboardWidgets } from "./components/dashboard-widgets";
@@ -9,10 +8,7 @@ import { DashboardProducts } from "./components/dashboard-products";
 import { DashboardOrders } from "./components/dashboard-orders";
 import { getProducts } from "@/lib/fakers/product-faker";
 
-export const metadata: Metadata = {
-  title: `Dashboard | ${site.name}`,
-  description: site.description,
-};
+export const metadata = createMetadata({ title: 'Dashboard' })
 
 export default function Page() {
   const products = getProducts(5)

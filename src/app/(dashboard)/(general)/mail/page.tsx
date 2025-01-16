@@ -1,15 +1,11 @@
 import { cookies } from "next/headers"
-import { site } from "@/config/site";
-import type { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata"
+
 import { Mail } from "./components/mail";
 import { accounts, mails } from "./data";
-
 import { Dashboard } from "@/components/app-dashboard";
 
-export const metadata: Metadata = {
-    title: "Mail | " + site.name,
-    description: site.description,
-};
+export const metadata = createMetadata({ title: 'Mail' })
 
 export default async function Page() {
     const cookie = await cookies()

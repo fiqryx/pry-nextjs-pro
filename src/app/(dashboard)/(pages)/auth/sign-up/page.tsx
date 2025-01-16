@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 
 import { GalleryVerticalEnd } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
@@ -10,11 +9,7 @@ import { SignUpFormSimple } from "./components/sign-up-form-simple";
 import { SignUpFormSplit } from "./components/sign-up-form-split";
 import { SignUpFormWithImage } from "./components/sign-up-form-with-image";
 
-
-export const metadata: Metadata = {
-    title: "Sign up | " + site.name,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'Sign up' })
 
 export default async function Page() {
     return (
