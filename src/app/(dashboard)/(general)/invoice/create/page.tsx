@@ -1,16 +1,12 @@
 import Link from "next/link";
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 
 import { ArrowLeft } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Dashboard } from "@/components/app-dashboard"
 import { InvoiceFormCreate } from "../components/invoice-form-create";
 
-export const metadata: Metadata = {
-    title: "Create invoice | " + site.name,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'Create invoice' })
 
 export default function Page() {
     return (

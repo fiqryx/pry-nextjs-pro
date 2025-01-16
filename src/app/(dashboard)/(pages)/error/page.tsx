@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 
 import { Separator } from "@/components/ui/separator";
 import { BlockPreview } from "@/components/ui/block";
@@ -9,10 +8,7 @@ import { ErrorNotFound } from "./components/error-not-found";
 import { ErrorInternalServer } from "./components/error-internal-server";
 import { ErrorUnauthorized } from "./components/error-unauthorized";
 
-export const metadata: Metadata = {
-    title: `Error | ${site.name}`,
-    description: site.description,
-};
+export const metadata = createMetadata({ title: 'Error' })
 
 export default function Page() {
     return (

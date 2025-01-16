@@ -1,15 +1,8 @@
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 import { Dashboard } from "@/components/app-dashboard"
 import { JobsFormCreate } from "../components/jobs-form-create";
 
-
-
-export const metadata: Metadata = {
-    title: "Create jobs | " + site.name,
-    description: site.description,
-}
-
+export const metadata = createMetadata({ title: 'Create jobs' })
 
 export default function Page() {
     return (

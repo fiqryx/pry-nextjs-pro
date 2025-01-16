@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Metadata } from "next";
-import { site } from "@/config/site";
 import { notFound } from "next/navigation";
+import { createMetadata } from "@/lib/metadata"
 
 import { Dashboard } from "@/components/app-dashboard"
 import { getOrderById } from "@/lib/fakers/order-faker";
@@ -31,10 +30,7 @@ interface Params {
     }>
 }
 
-export const metadata: Metadata = {
-    title: `Order detail | ${site.name}`,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'Order detail' })
 
 export default async function Page({ params }: Params) {
     const { id } = await params

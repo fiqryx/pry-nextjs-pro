@@ -1,16 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Metadata } from "next"
 import { site } from "@/config/site"
+import { createMetadata } from "@/lib/metadata"
 
 import { Icons } from "@/components/icons"
 import { PowerBy } from "../power-by"
 import { SignInForm } from "./components/sign-in-form"
 
-export const metadata: Metadata = {
-    title: "Sign in | " + site.name,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'Sign in' })
 
 export default function Page() {
     return (

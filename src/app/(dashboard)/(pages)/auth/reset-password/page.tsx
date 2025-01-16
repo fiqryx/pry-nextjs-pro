@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 
 import { GalleryVerticalEnd } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
@@ -9,10 +8,7 @@ import { Dashboard } from "@/components/app-dashboard";
 import { ResetPasswordSFormSimple } from "./components/reset-password-form-simple";
 import { ResetPasswordFormSplit } from "./components/reset-password-form-split";
 
-export const metadata: Metadata = {
-    title: "Reset password | " + site.name,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'Reset password' })
 
 export default async function Page() {
     return (

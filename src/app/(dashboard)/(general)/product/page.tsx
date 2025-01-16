@@ -1,6 +1,5 @@
 import Link from "next/link";
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 import { getProducts } from "@/lib/fakers/product-faker";
 
 import { Plus } from "lucide-react"
@@ -9,11 +8,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { DataTable } from "@/components/ui/data-table";
 import { productColumns } from "./components/product-columns";
 
-export const metadata: Metadata = {
-    title: "Products | " + site.name,
-    description: site.description,
-}
-
+export const metadata = createMetadata({ title: 'Products' })
 
 export default function Page() {
     const products = getProducts()

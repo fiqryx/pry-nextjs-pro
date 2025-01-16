@@ -39,8 +39,10 @@ yarn-error.log*
 next-env.d.ts
 
 # misc
+*.zip
 *.lockb
 *thumbnail.png
 !thumbnail.png
+*pending.ts
+public/theme
 src/components/examples/*
-src/config/navigation-pending.ts

@@ -1,13 +1,9 @@
 import Link from "next/link";
-import { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata";
 import { ArrowLeftIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 
-export const metadata: Metadata = {
-    title: `404: This page could not be found | ${site.name}`,
-    description: site.description,
-};
+export const metadata = createMetadata({ title: '404: This page could not be found' })
 
 export default function NotFound() {
     return (

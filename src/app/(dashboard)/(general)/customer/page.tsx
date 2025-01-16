@@ -1,6 +1,5 @@
 import Link from "next/link";
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 
 import { Plus } from "lucide-react"
 import { Dashboard } from "@/components/app-dashboard"
@@ -9,10 +8,7 @@ import { DataTable } from "@/components/ui/data-table";
 import { customerColumns } from "./components/customer-columns";
 import { getCustomers } from "@/lib/fakers/customer-faker";
 
-export const metadata: Metadata = {
-    title: "Customers | " + site.name,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'Customers' })
 
 export default function Page() {
     const customers = getCustomers()

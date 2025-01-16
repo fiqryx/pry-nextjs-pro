@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { auth } from "@/lib/next-auth";
 import { cookies } from "next/headers";
 import localFont from "next/font/local";
@@ -36,11 +35,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
-export const metadata: Metadata = {
-  title: process.env.APP_NAME,
-  description: "",
-};
 
 export default async function RootLayout({ children, params }: Props) {
   const session = await auth()

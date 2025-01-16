@@ -1,5 +1,4 @@
-import { Metadata } from "next"
-import { site } from "@/config/site"
+import { createMetadata } from "@/lib/metadata"
 
 import { Terminal } from "lucide-react";
 import { Navbar } from "./components/home-navbar";
@@ -9,11 +8,7 @@ import { Footer } from "./components/home-footer";
 import { HomeStartBuild } from "./components/home-start-build";
 import { HomeFeature } from "./components/home-feature";
 
-
-export const metadata: Metadata = {
-    title: site.name,
-    description: site.description,
-}
+export const metadata = createMetadata({})
 
 export default function Page() {
     return (

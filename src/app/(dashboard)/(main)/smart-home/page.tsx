@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { site } from "@/config/site";
+import { createMetadata } from "@/lib/metadata"
 
 import { Dashboard } from "@/components/app-dashboard"
 import { SmartHomeWidgets } from "./components/smarthome-widgets";
@@ -8,10 +7,7 @@ import { SmartHomeDevices } from "./components/smarthome-devices";
 import { SmartHomeMembers } from "./components/smarthome-members";
 import { SmartHomePowerConsumed } from "./components/smarthome-power-consumed";
 
-export const metadata: Metadata = {
-    title: `Smart home | ${site.name}`,
-    description: site.description,
-}
+export const metadata = createMetadata({ title: 'Smart home' })
 
 export default function Page() {
     return (
