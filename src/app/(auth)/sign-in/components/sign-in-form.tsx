@@ -1,19 +1,26 @@
 "use client"
-
 import { z } from "zod"
 import React from "react"
 import { cn } from "@/lib/utils"
 import { useForm } from "react-hook-form"
 import { useToast } from "@/hooks/use-toast"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { LiteralUnion, signIn } from 'next-auth/react';
-import { BuiltInProviderType } from "@auth/core/providers"
 
 import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
-import { EyeIcon, EyeOffIcon } from "lucide-react"
-import { Input, InputIcon } from "@/components/ui/input"
 
+import {
+  signInWithOAuth,
+  signInWithPassword
+} from "../../actions"
+import {
+  EyeIcon,
+  EyeOffIcon
+} from "lucide-react"
+import {
+  Input,
+  InputIcon
+} from "@/components/ui/input"
 import {
   Form,
   FormControl,
@@ -50,27 +57,13 @@ export function SignInForm({
     },
   })
 
-  function signInProvider(provider: LiteralUnion<BuiltInProviderType>) {
-    setIsLoading(true)
-
-    signIn(provider).finally(
-      () => setIsLoading(false)
-    )
-  }
-
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true)
+    const { error } = await signInWithPassword(values)
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    const res = await signIn('credentials', {
-      redirect: false,
-      ...values
-    })
-
-    if (!res || !res.ok || res.error) {
+    if (error) {
       setIsLoading(false)
-      toast({ description: "Invalid credentials." })
+      toast({ description: error.message })
       return
     }
 
@@ -163,7 +156,7 @@ export function SignInForm({
           type="button"
           variant="outline"
           disabled={isLoading}
-          onClick={() => signInProvider('discord')}
+          onClick={() => signInWithOAuth({ provider: 'discord' })}
         >
           <Icons.discord className="mr-2 h-4 w-4" /> Discord
         </Button>
@@ -171,7 +164,7 @@ export function SignInForm({
           type="button"
           variant="outline"
           disabled={isLoading}
-          onClick={() => signInProvider('github')}
+          onClick={() => signInWithOAuth({ provider: 'github' })}
         >
           <Icons.gitHub className="mr-2 h-4 w-4" /> GitHub
         </Button>
@@ -179,7 +172,7 @@ export function SignInForm({
           type="button"
           variant="outline"
           disabled={isLoading}
-          onClick={() => signInProvider('google')}
+          onClick={() => signInWithOAuth({ provider: 'google' })}
         >
           <Icons.google className="mr-2 h-4 w-4" /> Google
         </Button>

@@ -12,9 +12,9 @@ import {
 
 const data = [
     {
-        src: '/assets/logo-nextauth.png',
-        url: 'https://next-auth.js.org/',
-        content: 'Authenticating with NextAuth'
+        src: '/assets/logo-supabase.svg',
+        url: 'https://supabase.com/',
+        content: 'Authenticating with Supabase'
     }
 ]
 

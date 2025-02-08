@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils"
 import { colors } from "@/config/colors"
 
 import { useAppStore } from "@/stores/app"
-import { useSession } from "next-auth/react"
 import { usePathname } from "next/navigation"
 import { SettingSheet } from "../settings-sheet"
 import { Loading } from "@/components/ui/loading"
@@ -13,7 +12,6 @@ import { Loading } from "@/components/ui/loading"
 export function AppProvider({ children }: React.PropsWithChildren) {
     const pathname = usePathname()
     const appStore = useAppStore()
-    const { status } = useSession()
 
     React.useEffect(() => {
         if (!appStore.initialize) {
@@ -41,7 +39,7 @@ export function AppProvider({ children }: React.PropsWithChildren) {
         }
     }, [appStore.color])
 
-    if (appStore.loading || status === 'loading') {
+    if (appStore.loading) {
         return (
             <Loading
                 variant={cn({

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken"
 import NextAuth from "next-auth"
 
 import { site } from "@/config/site"
-import { supabase } from "./supabase"
+import { useSupabaseClient } from "./supabase/client"
 import { DefaultSession } from "next-auth"
 import { SupabaseAdapter } from "@auth/supabase-adapter"
 
@@ -34,11 +34,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         maxAge: 7 * 3600,
     },
     adapter: SupabaseAdapter({
-        url: process.env.SUPABASE_URL ?? '',
-        secret: process.env.SUPABASE_SERVICE_ROLE_KEY ?? '',
+        url: process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
+        secret: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '',
     }),
     providers: [
-        Discord,
+        Discord({ allowDangerousEmailAccountLinking: true }),
         Google,
         GitHub,
         Credentials({
@@ -47,8 +47,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                 password: {}
             },
             authorize: async ({ email, password }) => {
-                const { data: user } = await supabase
-                    .from("users")
+                const db = useSupabaseClient('next_auth')
+                const { data: user } = await db.from("users")
                     .select()
                     .eq('email', email)
                     .limit(1)

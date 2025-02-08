@@ -1,8 +1,8 @@
 "use client"
 
 import { User } from "@/types/user"
-import { signOut } from "next-auth/react"
 import { useAppStore } from "@/stores/app"
+import { useSupabaseClient } from "@/lib/supabase/client"
 
 import {
   BadgeCheck,
@@ -42,6 +42,7 @@ export function NavUser({
 }) {
   const { set } = useAppStore()
   const { isMobile } = useSidebar()
+  const supabase = useSupabaseClient()
 
   return (
     <SidebarMenu>
@@ -118,11 +119,8 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={() => {
-                set({
-                  loading: true,
-                  loading_message: 'Logout'
-                })
-                signOut({ redirect: false }).then(
+                set({ loading: true, loading_message: 'Logout' })
+                supabase.auth.signOut().then(
                   () => window.location.reload()
                 )
               }}
