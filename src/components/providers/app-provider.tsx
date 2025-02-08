@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils"
 import { colors } from "@/config/colors"
 
 import { useAppStore } from "@/stores/app"
-import { useSession } from "next-auth/react"
 import { usePathname } from "next/navigation"
 import { SettingSheet } from "../settings-sheet"
 import { Loading } from "@/components/ui/loading"
