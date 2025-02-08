@@ -13,7 +13,6 @@ import { Loading } from "@/components/ui/loading"
 export function AppProvider({ children }: React.PropsWithChildren) {
     const pathname = usePathname()
     const appStore = useAppStore()
-    const { status } = useSession()
 
     React.useEffect(() => {
         if (!appStore.initialize) {
@@ -41,7 +40,7 @@ export function AppProvider({ children }: React.PropsWithChildren) {
         }
     }, [appStore.color])
 
-    if (appStore.loading || status === 'loading') {
+    if (appStore.loading) {
         return (
             <Loading
                 variant={cn({

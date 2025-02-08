@@ -1,39 +1,39 @@
 "use client"
-
 import React from "react"
 import { useAppStore } from "@/stores/app"
 import { useAuthStore } from "@/stores/auth"
-import { useSession } from "next-auth/react"
+import { useSupabaseClient } from "@/lib/supabase/client"
 
 export function AuthProvider({ children }: React.PropsWithChildren) {
-    const appStore = useAppStore()
+    const app = useAppStore()
+    const supabase = useSupabaseClient()
     const { user, set } = useAuthStore()
-    const { data: session } = useSession()
 
-    const gettingSession = React.useCallback(async () => {
-        appStore.set({ loading: true })
+    async function getUser() {
+        app.set({ loading: true })
+        const { data: { user } } = await supabase.auth.getUser()
 
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        if (user) {
+            const { id, email, user_metadata } = user;
 
-        const user = session?.user;
+            set({
+                user: {
+                    id,
+                    email: email ?? 'anonymous',
+                    avatar: user_metadata?.avatar_url,
+                    firstName: user_metadata?.name,
+                }
+            })
+        }
 
-        set({
-            user: {
-                id: user?.id as string,
-                email: user?.email as string,
-                firstName: user?.name as string,
-                avatar: user?.image as string
-            }
-        })
-
-        appStore.set({ loading: false })
-    }, [user, session?.user])
+        app.set({ loading: false })
+    }
 
     React.useEffect(() => {
-        if (!user && session?.user) {
-            gettingSession()
+        if (!user) {
+            getUser()
         }
-    }, [user, session?.user])
+    }, [user, supabase])
 
     return children
 }

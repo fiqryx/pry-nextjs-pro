@@ -1,10 +1,8 @@
-import { auth } from "@/lib/next-auth";
 import { cookies } from "next/headers";
 import localFont from "next/font/local";
 import { i18nInitialize } from '@/lib/i18n';
 
 import { Toaster } from "@/components/ui/toaster"
-import { SessionProvider } from "next-auth/react"
 import { Analytics } from '@vercel/analytics/next';
 import { Toaster as SonnerToaster } from "@/components/ui/sonner"
 import { AppProvider } from "@/components/providers/app-provider";
@@ -37,7 +35,6 @@ const geistMono = localFont({
 });
 
 export default async function RootLayout({ children, params }: Props) {
-  const session = await auth()
   const cookie = await cookies();
 
   const locale = cookie.get("LOCALE")?.value ?? params.locale;
@@ -48,26 +45,24 @@ export default async function RootLayout({ children, params }: Props) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SessionProvider session={session}>
-          <I18nProvider
-            locale={locale}
-            resources={resources}
-            namespaces={namespaces}
+        <I18nProvider
+          locale={locale}
+          resources={resources}
+          namespaces={namespaces}
+        >
+          <ThemeProvider
+            enableSystem
+            attribute="class"
+            defaultTheme="system"
+            disableTransitionOnChange
           >
-            <ThemeProvider
-              enableSystem
-              attribute="class"
-              defaultTheme="system"
-              disableTransitionOnChange
-            >
-              <AppProvider>
-                <MapProvider>
-                  {children}
-                </MapProvider>
-              </AppProvider>
-            </ThemeProvider>
-          </I18nProvider>
-        </SessionProvider>
+            <AppProvider>
+              <MapProvider>
+                {children}
+              </MapProvider>
+            </AppProvider>
+          </ThemeProvider>
+        </I18nProvider>
 
         <Analytics />
         <Toaster />
