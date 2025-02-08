@@ -1,9 +1,17 @@
-## [Pry](https://pry-nextjs-pro.vercel.app/)
+### [🖥️ Live Preview](https://pry-nextjs-pro.vercel.app/)
 
-A modern and customizable UI kit designed to streamline the development of scalable SaaS applications. It provides all the essential tools and components to help you launch projects efficiently and professionally.
+##  🚀 Overview 
 
-This version is built with Next.js 15, leveraging the new App Router and React Server Components for improved performance, scalability, and seamless routing.
+This is a starter template using the following stack:
 
+- Framework - [Next.js (App Router)](https://nextjs.org)
+- Language - [TypeScript](https://www.typescriptlang.org)
+- Styling - [Tailwind CSS](https://tailwindcss.com)
+- Components - [Shadcn UI](https://ui.shadcn.com/)
+- Deployment - [Vercel](https://vercel.com/docs/concepts/next.js/overview)
+- Analytics - [Vercel Analytics](https://vercel.com/analytics)
+
+This template uses the new Next.js App Router. This includes support for enhanced layouts, colocation of components, and styles.
 
 [![Pry](./thumbnail.png)](https://pry-nextjs-pro.vercel.app/)
 
