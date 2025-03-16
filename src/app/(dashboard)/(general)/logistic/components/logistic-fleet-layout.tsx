@@ -21,7 +21,7 @@ export function LogisticFleetLayout({
         <SidebarProvider {...props} className="min-h-full sidebar-default">
             <LogisticFleetSidebar className="sidebar-default border inset-y-auto ltr:left-auto rtl:right-auto h-full" />
             <SidebarInset className="min-h-full">
-                <header className="flex h-12 shrink-0 justify-between items-center gap-2 bg-background border transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 px-4">
+                <header className="flex h-12 shrink-0 justify-between items-center gap-2 bg-background border transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 px-4">
                     <div className="flex lg:hidden items-center gap-2">
                         <SidebarTrigger>
                             <MenuIcon />

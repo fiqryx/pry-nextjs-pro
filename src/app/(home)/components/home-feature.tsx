@@ -66,9 +66,9 @@ export function HomeFeature({
                 <div className="my-8 flex flex-col gap-4">
                     <Link
                         href={process.env.NEXT_PUBLIC_SITE_DOCS_URL ?? '#'}
-                        className="rounded-xl bg-gradient-to-br from-transparent via-primary p-px shadow-lg shadow-primary/20"
+                        className="rounded-xl bg-linear-to-br from-transparent via-primary p-px shadow-lg shadow-primary/20"
                     >
-                        <div className="rounded-[inherit] bg-background bg-gradient-to-br from-transparent via-primary/10 p-4 transition-colors hover:bg-muted">
+                        <div className="rounded-[inherit] bg-background bg-linear-to-br from-transparent via-primary/10 p-4 transition-colors hover:bg-muted">
                             <BookOpenIcon />
                             <h3 className="font-semibold">Docs UI</h3>
                             <p className="text-sm text-muted-foreground">
@@ -100,7 +100,7 @@ export function HomeFeature({
                 description="Every template provides a thoughtfully structured project, offering a codebase that's not only productive but also a joy to work with."
             >
                 <div className="relative mt-8 h-[300px] overflow-hidden">
-                    <div className="border rounded-xl border-input p-1.5 mb-[-180px] min-w-[720px] bg-gradient-to-br from-stone-900 via-stone-800 to-stone-950 shadow-lg shadow-stone-800/50">
+                    <div className="border rounded-xl border-input p-1.5 mb-[-180px] min-w-[720px] bg-linear-to-br from-stone-900 via-stone-800 to-stone-950 shadow-lg shadow-stone-800/50">
                         <CodeBlock
                             code={code}
                             options={{

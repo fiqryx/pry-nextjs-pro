@@ -85,7 +85,7 @@ export function Navbar({
                 className
             )}
         >
-            <NavigationMenu className="flex lg:rounded-2xl border border-input bg-background shadow gap-6 px-2 h-14 lg:h-12 max-w-full">
+            <NavigationMenu className="flex lg:rounded-2xl border border-input bg-background shadow-sm gap-6 px-2 h-14 lg:h-12 max-w-full">
                 <Link href={"/"} className="inline-flex items-center gap-1.5 font-semibold ml-2 lg:ml-3.5">
                     <Icons.logo className="size-5 bg-foreground text-background p-0.5 rounded-sm" />
                     <span className="font-medium text-[15px]">{site.name}</span>
@@ -164,7 +164,7 @@ const ListItem = React.forwardRef<
                     ref={ref}
                     href={href ?? '#'}
                     className={cn(
-                        "block select-none space-y-1 rounded-md p-1 sm:p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                        "block select-none space-y-1 rounded-md p-1 sm:p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                         className
                     )}
                     {...props}

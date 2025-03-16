@@ -8,7 +8,7 @@ export default function Page() {
     return (
         <Dashboard className="container h-full p-1">
             <div className="flex h-full">
-                <div className="basis-2/5 hidden sm:block bg-gradient-to-r from-primary to-primary/70 rounded-bl-xl" />
+                <div className="basis-2/5 hidden sm:block bg-linear-to-r from-primary to-primary/70 rounded-bl-xl" />
                 <JobsFormCreate />
             </div>
         </Dashboard>

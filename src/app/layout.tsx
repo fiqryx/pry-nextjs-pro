@@ -11,8 +11,6 @@ import { ThemeProvider } from "@/components/providers/theme-provider"
 import { I18nProvider } from "@/components/providers/i18n-provider";
 
 import "../styles/globals.css";
-import "../styles/custom.css";
-import "../styles/theme.css";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 type Props = Readonly<{

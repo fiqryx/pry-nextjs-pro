@@ -21,7 +21,7 @@ export default function Page() {
                         "url('cosmic.svg') center/cover no-repeat",
                         'repeating-linear-gradient(to right, hsl(var(--primary)/.1),hsl(var(--primary)/.1) 1px,transparent 1px,transparent 50px)',
                         'repeating-linear-gradient(to bottom, hsl(var(--primary)/.1),hsl(var(--primary)/.1) 1px,transparent 1px,transparent 50px)'
-                    ].join(',')
+                    ].join(','),
                 }}
             />
             <main className="container relative max-w-[1100px] px-2 mt-16 lg:mt-24">

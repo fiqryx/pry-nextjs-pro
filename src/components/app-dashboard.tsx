@@ -86,7 +86,7 @@ export function Dashboard({
                     onSizeChange={onSizeChange}
                 />
                 <SidebarInset>
-                    <header className="sticky top-0 flex h-16 shrink-0 justify-between items-center px-4 gap-2 bg-background z-50 border-b transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
+                    <header className="sticky top-0 flex h-16 shrink-0 justify-between items-center px-4 gap-2 bg-background z-50 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
                         <div className="flex items-center gap-2">
                             <SidebarTrigger className="-ml-1" />
                             <Separator orientation="vertical" className="h-4" />

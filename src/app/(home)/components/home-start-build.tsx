@@ -35,7 +35,7 @@ export function HomeStartBuild({
                         className={cn(
                             'select-none animate-in fade-in slide-in-from-right-12 duration-1000',
                             'border rounded-xl border-input p-2 mb-[-180px] mt-8 min-w-[800px] md:min-w-[1100px]',
-                            'bg-gradient-to-br from-stone-900 via-stone-800 to-stone-950 shadow-lg shadow-stone-800/50'
+                            'bg-linear-to-br from-stone-900 via-stone-800 to-stone-950 shadow-lg shadow-stone-800/50'
                         )}
                     >
                         <Image
