@@ -3,6 +3,7 @@
 @import './partials/lists.css';
 @import './partials/typography.css';
 @import './partials/zoom.css';
+@import '../../../styles/globals.css';
 
 :root {
   --mt-overlay: rgba(251, 251, 251, 0.75);
@@ -101,7 +102,7 @@
   @apply z-0 outline-0;
 }
 
-.minimal-tiptap-editor .ProseMirror > div.editor {
+.minimal-tiptap-editor .ProseMirror>div.editor {
   @apply block flex-1 whitespace-pre-wrap;
 }
 
@@ -134,8 +135,8 @@
 }
 
 .minimal-tiptap-editor .ProseMirror li .text-node:has(+ .list-node),
-.minimal-tiptap-editor .ProseMirror li > .list-node,
-.minimal-tiptap-editor .ProseMirror li > .text-node,
+.minimal-tiptap-editor .ProseMirror li>.list-node,
+.minimal-tiptap-editor .ProseMirror li>.text-node,
 .minimal-tiptap-editor .ProseMirror li p {
   @apply mb-0;
 }
