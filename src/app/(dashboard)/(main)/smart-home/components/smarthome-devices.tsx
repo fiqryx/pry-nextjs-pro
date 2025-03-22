@@ -70,7 +70,7 @@ export function SmartHomeDevices({
                     </Button>
                 </div>
             </div>
-            <ScrollArea className="max-w-prose md:max-w-screen-md whitespace-nowrap">
+            <ScrollArea className="max-w-prose md:max-w-(--breakpoint-md) whitespace-nowrap">
                 <div className="flex w-max space-x-5 px-2 py-4">
                     {devices.map((item) => (
                         <CardDevices

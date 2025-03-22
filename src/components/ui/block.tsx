@@ -82,7 +82,7 @@ const BlockPreview = React.forwardRef<HTMLDivElement, BlockPreviewProps>(
                         </ResizablePanel>
                         <ResizableHandle
                             className={cn(
-                                "relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-y-1/2 after:translate-x-[-1px] after:rounded-full after:bg-border after:transition-all after:hover:h-10 lg:block",
+                                "relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-y-1/2 after:translate-x-[-1px] after:rounded-full after:bg-border after:transition-all hover:after:h-10 lg:block",
                             )}
                         />
                         <ResizablePanel defaultSize={0} minSize={0} />
@@ -93,7 +93,7 @@ const BlockPreview = React.forwardRef<HTMLDivElement, BlockPreviewProps>(
                         <div
                             data-rehype-pretty-code-fragment
                             dangerouslySetInnerHTML={{ __html: highlightCodeSync(block.code) }}
-                            className="w-full overflow-hidden rounded-md [&_pre]:my-0 [&_pre]:h-[--container-height] [&_pre]:overflow-auto [&_pre]:whitespace-break-spaces [&_pre]:p-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed"
+                            className="w-full overflow-hidden rounded-md [&_pre]:my-0 [&_pre]:h-(--container-height) [&_pre]:overflow-auto [&_pre]:whitespace-break-spaces [&_pre]:p-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed"
                         />
                     </TabsContent>
                 )}
@@ -134,7 +134,7 @@ const BlockToolbar = React.forwardRef<HTMLDivElement, BlockToolbarProps>(
             >
                 {showPreviewCode && (
                     <div className="flex items-center gap-2">
-                        <TabsList className="hidden h-7 rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)] sm:flex">
+                        <TabsList className="hidden h-7 rounded-md p-0 px-[calc(--spacing(1)-2px)] py-[--spacing(1)] sm:flex">
                             <TabsTrigger
                                 value="preview"
                                 className="h-[1.45rem] rounded-sm px-2 text-xs"
@@ -152,7 +152,7 @@ const BlockToolbar = React.forwardRef<HTMLDivElement, BlockToolbarProps>(
                     </div>
                 )}
                 <div className="flex items-center gap-2 md:pr-[14px]">
-                    <div className="hidden h-[28px] items-center gap-1.5 rounded-md border p-[2px] shadow-sm lg:flex">
+                    <div className="hidden h-[28px] items-center gap-1.5 rounded-md border p-[2px] shadow-xs lg:flex">
                         <ToggleGroup
                             type="single"
                             defaultValue="100"

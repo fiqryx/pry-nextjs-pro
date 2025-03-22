@@ -62,7 +62,7 @@ export function ToggleNotification({
                 side="bottom"
                 align="end"
                 sideOffset={4}
-                className="w-[--radix-dropdown-menu-trigger-width] min-w-72 rounded-lg"
+                className="w-(--radix-dropdown-menu-trigger-width) min-w-72 rounded-lg"
             >
                 <ScrollArea className="h-96">
                     {notification.sort((a, b) => b.date.getTime() - a.date.getTime()).map((item, index) => (

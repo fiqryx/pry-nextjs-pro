@@ -24,7 +24,7 @@ export function HomeFeedback({
                 Supercharge your productivity
             </p>
 
-            <div className="mt-6 rounded-xl border bg-gradient-to-b from-secondary p-4 shadow-lg max-w-lg">
+            <div className="mt-6 rounded-xl border bg-linear-to-b from-secondary p-4 shadow-lg max-w-lg">
                 <p className="text-sm text-center font-medium">
                     Our template is wonderfully simple and user-friendly. It's easy to love when you focus on essentials and skip non-critical extras.
                 </p>

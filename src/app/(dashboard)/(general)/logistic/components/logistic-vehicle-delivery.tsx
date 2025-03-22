@@ -73,7 +73,7 @@ export function LogisticVehicleDelivery({
                                     key={geo.rsmKey}
                                     geography={geo}
                                     className={cn(
-                                        'outline-none fill-gray-300 stroke-muted',
+                                        'outline-hidden fill-gray-300 stroke-muted',
                                         geo.properties.sales && 'fill-primary/80 animate-pulse'
                                     )}
                                 />

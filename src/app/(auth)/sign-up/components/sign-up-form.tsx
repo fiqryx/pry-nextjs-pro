@@ -6,8 +6,7 @@ import { cn } from "@/lib/utils"
 import { toast } from "@/hooks/use-toast"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { LiteralUnion, signIn } from 'next-auth/react';
-import { BuiltInProviderType } from "@auth/core/providers"
+import { signIn } from 'next-auth/react';
 
 import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
@@ -55,7 +54,7 @@ export function SingUpForm({
         },
     })
 
-    function signUpProvider(provider: LiteralUnion<BuiltInProviderType>) {
+    function signUpProvider(provider: string) {
         setIsLoading(true)
 
         signIn(provider).finally(

@@ -13,7 +13,7 @@ export function HomeHero({
         <div
             {...props}
             className={cn(
-                'container relative z-[2] flex flex-col overflow-hidden border-x border-t bg-background px-6 pt-12 max-md:text-center md:px-12 md:pt-16',
+                'container relative z-2 flex flex-col overflow-hidden border-x border-t bg-background px-6 pt-12 max-md:text-center md:px-12 md:pt-16',
                 className
             )}
         >
@@ -55,7 +55,7 @@ export function HomeHero({
                 className={cn(
                     'select-none animate-in fade-in slide-in-from-bottom-12 duration-1000',
                     'border rounded-xl border-input p-2 mb-[-180px] mt-8 min-w-[800px] md:min-w-[1100px]',
-                    'bg-gradient-to-br from-stone-900 via-stone-800 to-stone-950 shadow-lg shadow-stone-800/50'
+                    'bg-linear-to-br from-stone-900 via-stone-800 to-stone-950 shadow-lg shadow-stone-800/50'
                 )}
             >
                 <Image

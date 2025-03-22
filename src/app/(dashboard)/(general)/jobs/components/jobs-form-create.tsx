@@ -524,7 +524,7 @@ function Step3({ form }: StepFormProps) {
                                 immediatelyRender
                                 throttleDelay={0}
                                 onCreate={handleCreate}
-                                editorClassName="focus:outline-none p-5"
+                                editorClassName="focus:outline-hidden p-5"
                                 placeholder="Type your describe here..."
                                 className={cn('w-full focus-within:border-ring', {
                                     'border-destructive focus-within:border-destructive': form.formState.errors.description

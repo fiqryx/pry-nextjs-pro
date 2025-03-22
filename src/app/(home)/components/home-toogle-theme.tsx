@@ -7,7 +7,7 @@ import { cva } from "class-variance-authority";
 
 
 const buttonVariants = cva(
-    'size-7 rounded-full p-1.5 text-muted-foreground',
+    'size-7 rounded-full p-1.5 text-muted-foreground cursor-pointer',
     {
         variants: {
             dark: {

@@ -67,7 +67,7 @@ export function SmartHomeMembers({
                     <ChevronRight />
                 </Button>
             </div>
-            <ScrollArea className="max-w-prose md:max-w-screen-md whitespace-nowrap rounded-lg border shadow">
+            <ScrollArea className="max-w-prose md:max-w-(--breakpoint-md) whitespace-nowrap rounded-lg border shadow-sm">
                 <div className="flex w-max space-x-10 p-4">
                     {members.map((item, idx) => (
                         <div key={idx} className="flex flex-col items-center text-center">

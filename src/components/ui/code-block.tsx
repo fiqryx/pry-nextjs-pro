@@ -22,7 +22,7 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
             data-rehype-pretty-code-fragment
             dangerouslySetInnerHTML={{ __html: await highlightCode(code, options) }}
             className={cn(
-                'w-full overflow-hidden rounded-md [&_pre]:my-0 [&_pre]:h-[--container-height] [&_pre]:overflow-auto [&_pre]:whitespace-break-spaces [&_pre]:p-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed',
+                'w-full overflow-hidden rounded-md [&_pre]:my-0 [&_pre]:h-(--container-height) [&_pre]:overflow-auto [&_pre]:whitespace-break-spaces [&_pre]:p-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed',
                 className
             )}
         />

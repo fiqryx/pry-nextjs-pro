@@ -121,7 +121,7 @@ export function SmartHomeWidgetDetails({
                         <ChartMeasure
                             {...item}
                             label={`Power ${item.active ? 'On' : 'Off'}`}
-                            className="border rounded-full shadow"
+                            className="border rounded-full shadow-sm"
                         />
 
                         <Button size="icon" variant="ghost">

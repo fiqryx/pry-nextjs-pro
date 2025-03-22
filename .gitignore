@@ -40,7 +40,6 @@ next-env.d.ts
 
 # misc
 *.zip
-*.lockb
 *plan.md
 *thumbnail.png
 !thumbnail.png

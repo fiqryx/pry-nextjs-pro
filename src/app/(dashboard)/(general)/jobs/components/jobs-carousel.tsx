@@ -58,7 +58,7 @@ export function JobsCarousel({
                             <div
                                 className={cn('p-1', idx !== current && 'hidden sm:flex')}
                             >
-                                <Card className="bg-gradient-to-r from-primary to-primary/70">
+                                <Card className="bg-linear-to-r from-primary to-primary/70">
                                     <CardContent className="grid sm:grid-cols-5 py-16 px-8">
                                         <div className="sm:col-span-3 flex flex-col gap-4">
                                             <h3 className="text-4xl text-primary-foreground font-semibold tracking-tight">
