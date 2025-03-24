@@ -16,10 +16,18 @@ This template uses the new Next.js App Router. This includes support for enhance
 
 [![Pry](./thumbnail.png)](https://pry-nextjs-pro.vercel.app/)
 
+## How to install
+
+```bash
+$ npx pry-cli@latest -v pro
+# or
+$ npx pry-cli@latest my-app -v pro
+```
+
 
 ## Documentation
 
-- Visit to view detail [documentation site](https://pry-docs.vercel.app/).
+- Visit [documentation site](https://pry-docs.vercel.app/) for details.
 
 ## Reporting Issues:
 
