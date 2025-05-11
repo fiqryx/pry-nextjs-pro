@@ -8,6 +8,7 @@ import { DashboardProducts } from "./components/dashboard-products";
 import { DashboardOrders } from "./components/dashboard-orders";
 import { getProducts } from "@/lib/fakers/product-faker";
 
+export const revalidate = 0;
 export const metadata = createMetadata({ title: 'Dashboard' })
 
 export default function Page() {

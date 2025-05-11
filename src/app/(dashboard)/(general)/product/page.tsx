@@ -8,6 +8,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { DataTable } from "@/components/ui/data-table";
 import { productColumns } from "./components/product-columns";
 
+export const revalidate = 0;
 export const metadata = createMetadata({ title: 'Products' })
 
 export default function Page() {

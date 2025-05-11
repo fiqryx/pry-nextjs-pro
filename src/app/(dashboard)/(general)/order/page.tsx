@@ -8,6 +8,7 @@ import { DataTable } from "@/components/ui/data-table";
 import { getOrders } from "@/lib/fakers/order-faker";
 import { orderColumns } from "./components/order-columns";
 
+export const revalidate = 0;
 export const metadata = createMetadata({ title: 'Orders' })
 
 export default function Page() {
