@@ -8,6 +8,7 @@ import { DataTable } from "@/components/ui/data-table";
 import { customerColumns } from "./components/customer-columns";
 import { getCustomers } from "@/lib/fakers/customer-faker";
 
+export const revalidate = 0;
 export const metadata = createMetadata({ title: 'Customers' })
 
 export default function Page() {

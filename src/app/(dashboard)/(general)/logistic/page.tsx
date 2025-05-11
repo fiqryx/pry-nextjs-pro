@@ -12,6 +12,7 @@ import { LogisticVehicleCondition } from "./components/logistic-vehicle-conditio
 import { LogisticVehicleRoute } from "./components/logistic-vehicle-route";
 import { LogisticHydrator } from "./components/logistic-hydrator";
 
+export const revalidate = 0;
 export const metadata = createMetadata({ title: 'Logistics' })
 
 export default function Page() {

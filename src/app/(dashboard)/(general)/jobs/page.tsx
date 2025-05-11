@@ -7,6 +7,7 @@ import { JobsCarousel } from "./components/jobs-carousel";
 import { JobsFilter } from "./components/jobs-filter";
 import { JobsCompany } from "./components/jobs-company";
 
+export const revalidate = 0;
 export const metadata = createMetadata({ title: 'Jobs' })
 
 export default function Page() {

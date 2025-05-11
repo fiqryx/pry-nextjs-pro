@@ -12,6 +12,7 @@ import { InvoiceView } from "./components/invoice-view";
 import { InvoiceFilter } from "./components/invoice-filter";
 import { InvoiceTable } from "./components/invoice-table";
 
+export const revalidate = 0;
 export const metadata = createMetadata({ title: 'Invoices' })
 
 export default function Page() {

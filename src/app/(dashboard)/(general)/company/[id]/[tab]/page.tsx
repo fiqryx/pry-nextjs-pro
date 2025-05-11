@@ -20,6 +20,7 @@ interface Params {
     }>
 }
 
+export const revalidate = 0;
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
     const { id } = await params
     const data = getCompanyById(id)

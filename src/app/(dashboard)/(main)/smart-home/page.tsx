@@ -7,6 +7,7 @@ import { SmartHomeDevices } from "./components/smarthome-devices";
 import { SmartHomeMembers } from "./components/smarthome-members";
 import { SmartHomePowerConsumed } from "./components/smarthome-power-consumed";
 
+export const revalidate = 0;
 export const metadata = createMetadata({ title: 'Smart home' })
 
 export default function Page() {
