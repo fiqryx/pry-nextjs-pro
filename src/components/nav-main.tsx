@@ -162,7 +162,7 @@ interface NavLabelProps {
 function NavLabel({ label }: NavLabelProps) {
   if (typeof label === 'string') {
     return (
-      <Badge className="text-xs font-thin hover:bg-primary px-1 py-0 ml-2">
+      <Badge className="text-xs font-thin px-1 py-0 ml-2">
         {label}
       </Badge>
     )
@@ -171,7 +171,7 @@ function NavLabel({ label }: NavLabelProps) {
   return (
     <Badge
       {...label}
-      className="text-xs font-thin hover:bg-primary px-1 py-0 ml-2"
+      className="text-xs font-thin px-1 py-0 ml-2"
     />
   )
 }

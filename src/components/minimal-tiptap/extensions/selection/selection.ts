@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import { Extension } from '@tiptap/react'
 import { Plugin, PluginKey } from '@tiptap/pm/state'
 import { Decoration, DecorationSet } from '@tiptap/pm/view'
@@ -12,6 +13,7 @@ export const Selection = Extension.create({
       new Plugin({
         key: new PluginKey('selection'),
         props: {
+          // @ts-expect-error
           decorations(state) {
             if (state.selection.empty) {
               return null

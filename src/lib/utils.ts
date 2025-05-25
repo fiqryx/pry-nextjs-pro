@@ -54,3 +54,28 @@ export function ctv(className: string, variable: string = '--primary') {
 
   return result;
 }
+
+export function sortByDate<T extends Record<string, any>>(
+  items: T[],
+  field: keyof T,
+  order: 'asc' | 'desc' = 'desc'
+): T[] {
+  return [...items].sort((a, b) => {
+    if (!a[field] && !b[field]) return 0;
+    if (!a[field]) return 1;
+    if (!b[field]) return -1;
+
+    try {
+      const dateA = new Date(a[field]).getTime();
+      const dateB = new Date(b[field]).getTime();
+
+      if (isNaN(dateA) && isNaN(dateB)) return 0;
+      if (isNaN(dateA)) return 1;
+      if (isNaN(dateB)) return -1;
+
+      return order === 'desc' ? dateB - dateA : dateA - dateB;
+    } catch {
+      return 0;
+    }
+  });
+};

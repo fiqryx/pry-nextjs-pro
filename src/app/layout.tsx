@@ -59,12 +59,13 @@ export default async function RootLayout({ children, params }: Props) {
                 {children}
               </MapProvider>
             </AppProvider>
+
+            <Toaster />
+            <SonnerToaster />
           </ThemeProvider>
         </I18nProvider>
 
         <Analytics />
-        <Toaster />
-        <SonnerToaster />
       </body>
     </html>
   );

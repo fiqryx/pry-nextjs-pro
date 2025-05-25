@@ -49,7 +49,7 @@ import {
 } from "@/components/ui/step";
 
 type StepFormProps = {
-    form: ReturnType<typeof useForm>
+    form: ReturnType<typeof useForm<z.infer<typeof schema>>>
 }
 
 type StepMap = {
@@ -323,7 +323,7 @@ function Step2({ form }: StepFormProps) {
                                         variant="ghost"
                                         onClick={() => {
                                             if (tempTag) {
-                                                field.onChange([...field.value, tempTag.trim()])
+                                                field.onChange([...(field.value || []), tempTag.trim()])
                                                 setTempTag("")
                                             }
                                         }}
@@ -333,7 +333,7 @@ function Step2({ form }: StepFormProps) {
                                 </InputIcon>
                             </Input>
                             <FormMessage />
-                            {field.value?.length > 0 && (
+                            {field.value && field.value?.length > 0 && (
                                 <div className="flex flex-wrap gap-2 py-2">
                                     {(field.value as string[]).map((item, idx) => (
                                         <Badge
@@ -346,7 +346,7 @@ function Step2({ form }: StepFormProps) {
                                                 type="button"
                                                 className="rounded-full hover:bg-accent"
                                                 onClick={() =>
-                                                    field.onChange(field.value.filter((v: string) => v != item))
+                                                    field.onChange(field.value?.filter((v: string) => v != item))
                                                 }
                                             >
                                                 <CircleXIcon className="size-4" />
@@ -527,7 +527,7 @@ function Step3({ form }: StepFormProps) {
                                 editorClassName="focus:outline-hidden p-5"
                                 placeholder="Type your describe here..."
                                 className={cn('w-full focus-within:border-ring', {
-                                    'border-destructive focus-within:border-destructive': form.formState.errors.description
+                                    'border-destructive focus-within:border-destructive': form.formState.errors.describe
                                 })}
                             />
                             <FormMessage />

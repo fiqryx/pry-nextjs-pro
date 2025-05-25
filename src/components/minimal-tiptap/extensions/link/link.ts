@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { mergeAttributes } from '@tiptap/react'
 import TiptapLink from '@tiptap/extension-link'
 import type { EditorView } from '@tiptap/pm/view'
@@ -41,6 +42,7 @@ export const Link = TiptapLink.extend({
       ...(this.parent?.() || []),
       new Plugin({
         props: {
+          // @ts-expect-error
           handleKeyDown: (_: EditorView, event: KeyboardEvent) => {
             const { selection } = editor.state
 

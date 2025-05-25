@@ -97,6 +97,12 @@ export const navigation: Navigation = {
             url: "/mail",
             icon: Lucide.Mail,
         },
+        {
+            title: "Timeline",
+            url: "/timeline",
+            icon: Lucide.ChartNoAxesGantt,
+            label: { variant: 'success', children: 'New' }
+        },
     ],
     pages: [
         {
@@ -126,7 +132,7 @@ export const navigation: Navigation = {
         {
             title: 'Label',
             icon: Lucide.TagIcon,
-            label: { variant: 'success', children: 'new' },
+            label: { variant: 'destructive', children: 'Pro' },
         },
         {
             title: "Level 0",
