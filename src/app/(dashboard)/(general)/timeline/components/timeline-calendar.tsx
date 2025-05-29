@@ -80,8 +80,10 @@ export function TimelineCalendar({ tasks }: { tasks: Task[] }) {
             header: (item) => {
                 const Comp = typeMap[item.type];
                 return (
-                    <div className="flex w-full items-center gap-1">
-                        <Comp className={cn('size-4', item.type === 'bug' ? 'text-destructive' : 'text-blue-500')} />
+                    <div className="flex flex-shrink-0 w-full items-center gap-1">
+                        <div className="icon">
+                            <Comp className={cn('size-4', item.type === 'bug' ? 'text-destructive' : 'text-blue-500')} />
+                        </div>
                         <a href="#" className='text-xs font-semibold truncate hover:underline'>
                             {item.name}
                         </a>
@@ -94,22 +96,26 @@ export function TimelineCalendar({ tasks }: { tasks: Task[] }) {
                 const endDate = item.endDate ? format(item.endDate, "EEE, MMM d") : '';
 
                 return (
-                    <div className='flex items-center text-xs truncate gap-2'>
-                        <Avatar className='size-7' title={item.assignee.name}>
+                    <div className='flex flex-shrink-0 items-center gap-1 max-w-full'>
+                        <Avatar className='size-7 mr-1' title={item.assignee.name}>
                             <AvatarImage src={item.assignee.image} alt={item.assignee.name} />
                             <AvatarFallback className='text-muted-foreground'>
                                 {item.assignee.name.charAt(0)}
                             </AvatarFallback>
                         </Avatar>
-                        <Comp
-                            className={cn(
-                                'size-4',
-                                item.status === 'todo' && 'text-muted-foreground',
-                                item.status === 'on-progress' && 'text-blue-500',
-                                item.status === 'done' && 'text-success',
-                            )}
-                        />
-                        <span>{`${startDate} - ${endDate}`}</span>
+                        <div className="icon">
+                            <Comp
+                                className={cn(
+                                    'size-4',
+                                    item.status === 'todo' && 'text-muted-foreground',
+                                    item.status === 'on-progress' && 'text-blue-500',
+                                    item.status === 'done' && 'text-success',
+                                )}
+                            />
+                        </div>
+                        <span title={`${startDate} - ${endDate}`} className="text-xs truncate font-normal">
+                            {`${startDate} - ${endDate}`}
+                        </span>
                     </div>
                 )
             },
