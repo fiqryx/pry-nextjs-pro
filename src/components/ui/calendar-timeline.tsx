@@ -181,7 +181,7 @@ function CalendarTimelineProvider({ context, force, className, hideRowHeader, ch
             <CalendarTimelineContext.Provider value={{ ...context, data, isNotEmpty, hideRowHeader }}>
                 <div
                     {...props}
-                    className={cn('flex flex-col rounded-sm border', className)}
+                    className={cn('grid rounded-sm border', className)}
                 >
                     {children}
                 </div>
@@ -195,7 +195,7 @@ function CalendarTimelineControl({ className, ...props }: React.ComponentProps<'
     return (
         <div
             {...props}
-            className={cn('flex items-center bg-sidebar p-2 gap-1', className)}
+            className={cn('flex flex-wrap items-center bg-sidebar p-2 gap-1', className)}
         />
     )
 }
@@ -211,7 +211,7 @@ function CalendarTimelineContent({ className, style, children, ...props }: React
                 style={{ scrollbarWidth: 'thin', ...style }}
                 className={cn('scroll-smooth flex-grow border-t', className)}
             >
-                <div className="relative min-w-max">
+                <div className="relative xmin-w-max">
                     {children}
                 </div>
             </div>
