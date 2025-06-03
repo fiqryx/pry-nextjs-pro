@@ -1,5 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils';
+import { useIsMobile } from "@/hooks/use-mobile";
+import { TouchBackend } from "react-dnd-touch-backend";
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useDrag, useDrop, DndProvider } from 'react-dnd';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
@@ -134,6 +136,8 @@ type CalendarTimelineProps = React.ComponentProps<'div'> & {
 }
 
 function CalendarTimelineProvider({ context, force, className, hideRowHeader, children, ...props }: CalendarTimelineProps) {
+    const isMobile = useIsMobile();
+
     const getPosition = useCallback((item: TData) => {
         const { startDate, endDate } = context.field.state;
         const start = getDateValue(item, startDate as string);
@@ -174,10 +178,13 @@ function CalendarTimelineProvider({ context, force, className, hideRowHeader, ch
 
     const isNotEmpty = useMemo(() => {
         return data.find(v => !!v.position) && data.length > 0
-    }, [data])
+    }, [data]);
 
     return (
-        <DndProvider backend={HTML5Backend}>
+        <DndProvider
+            options={{ enableMouseEvents: true }}
+            backend={isMobile ? TouchBackend : HTML5Backend}
+        >
             <CalendarTimelineContext.Provider value={{ ...context, data, isNotEmpty, hideRowHeader }}>
                 <div
                     {...props}
