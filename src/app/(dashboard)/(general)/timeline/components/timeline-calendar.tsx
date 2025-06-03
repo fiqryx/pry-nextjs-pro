@@ -171,7 +171,7 @@ export function TimelineCalendar({ tasks }: { tasks: Task[] }) {
                         {hideRowHeader ? 'Show' : 'Hide'} panel
                     </Button>
                 </div>
-                <div className="flex items-center gap-1">
+                <div className="flex flex-wrap items-center gap-1">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button
